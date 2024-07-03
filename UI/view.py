@@ -31,12 +31,12 @@ class View(ft.UserControl):
 
         #ROW with some controls
         self.ddyear = ft.Dropdown(label="Anno")
-        self.ddshape = ft.Dropdown(label="Shape")
+        self.ddstate = ft.Dropdown(label="stato", on_change=self._controller.handleS)
 
 
         # button for the "creat graph" reply
         self.btn_graph = ft.ElevatedButton(text="Crea Grafo", on_click=self._controller.handle_graph)
-        row1 = ft.Row([self.ddyear,self.ddshape, self.btn_graph],
+        row1 = ft.Row([self.ddyear, self.btn_graph, self.ddstate],
                       alignment=ft.MainAxisAlignment.CENTER)
         self._page.controls.append(row1)
 
